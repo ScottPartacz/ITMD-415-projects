@@ -1,9 +1,5 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -15,8 +11,9 @@ public class Server {
 		try {
 			String math = "-,+,*,/,%,";
 			double answer = 0;
+			String returnMessage;
 			ArrayList<String> componets = new ArrayList<String>();
-			
+			String[] array = new String[2];
 			int port = 2500;
 			ServerSocket serverSocket = new ServerSocket(port);
 			System.out.println("Server Started and listening to the port 2500");
@@ -27,11 +24,13 @@ public class Server {
 
 			// Server is running always. This is done using this while(true)
 			// loop
-			while (true) {
+			do {
 				// Reading the message from the client
 				String equation = br.readLine();
-				
-				String[] array = equation.split("[-+/%*]");
+				if(!equation.equals(""))
+				{
+				array = equation.split("[-+/%*]");
+
 				
 				for (String temp: array) {
 					if(temp.equals("")){continue;}
@@ -42,7 +41,6 @@ public class Server {
 					for(int i = 0; i < equation.length(); i++)
 					{
 						char temp = equation.charAt(i);
-						
 						if(!equation.matches("[0-9+-/%*]+") || (equation.matches("[0-9]+") && !equation.matches("[+-/%*]+")) || (!equation.matches("[0-9]+") && equation.matches("[+-/%*]+")) || componets.size() > 2)
 						{
 							System.out.println("Invaild expression");
@@ -54,13 +52,13 @@ public class Server {
 						{
 							case 0:// Subtraction
 								answer = Double.parseDouble(componets.get(0)) - Double.parseDouble(componets.get(1));
-								break;
+								break outerloop;
 							case 2:// Addition
 								answer = Double.parseDouble(componets.get(0)) + Double.parseDouble(componets.get(1));
-								break;
+								break outerloop;
 							case 4:// Multiplication
 								answer = Double.parseDouble(componets.get(0)) * Double.parseDouble(componets.get(1));
-								break;
+								break outerloop;
 							case 6:// Division
 								if(equation.charAt(++i) == '/') // Floor Division 
 								{
@@ -71,17 +69,19 @@ public class Server {
 									answer = Double.parseDouble(componets.get(0)) / Double.parseDouble(componets.get(1));
 								}
 								
-								break;
+								break outerloop;
 							case 8:// Modulo
 								answer = Double.parseDouble(componets.get(0)) % Double.parseDouble(componets.get(1));
-								break;
+								break outerloop;
 						}
 					}
-				String returnMessage = equation + " = " + answer;
+				returnMessage = equation + " = " + answer;
 			
 				// Sending the response back to the client.
 				pw.println(returnMessage);
-			}
+				componets.clear();
+				}
+			} while (true);
 		}
 		 catch (Exception e) {
 			e.printStackTrace();
