@@ -43,7 +43,10 @@ public class Server {
 						char temp = equation.charAt(i);
 						if(!equation.matches("[0-9+-/%*]+") || (equation.matches("[0-9]+") && !equation.matches("[+-/%*]+")) || (!equation.matches("[0-9]+") && equation.matches("[+-/%*]+")) || componets.size() > 2)
 						{
-							System.out.println("Invaild expression");
+							returnMessage = "Invaild expression";
+							pw.println(returnMessage);
+							componets.clear();
+							answer = -1;
 							break outerloop;
 							
 						}
@@ -75,11 +78,18 @@ public class Server {
 								break outerloop;
 						}
 					}
+				if(!(answer == -1))
+				{
 				returnMessage = equation + " = " + answer;
 			
 				// Sending the response back to the client.
 				pw.println(returnMessage);
 				componets.clear();
+				}
+				else
+				{
+					answer = 0;
+				}
 				}
 			} while (true);
 		}
