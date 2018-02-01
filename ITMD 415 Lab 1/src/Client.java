@@ -4,30 +4,27 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.net.InetAddress;
+import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
 
-	private static Socket socket;
-
 	public static void main(String args[]) {
-		try {
-			String host = "localhost";
-			int port = 2500;
-			InetAddress address = InetAddress.getByName(host);
-			socket = new Socket(address, port);
-
+		try ( Socket socket = new Socket("localhost", 2500)){
+		
 			// Send the message to the server
-			OutputStream os = socket.getOutputStream();
-			OutputStreamWriter osw = new OutputStreamWriter(os);
-			BufferedWriter bw = new BufferedWriter(osw);
-
-			String equation = "3 * 5";
-
+			PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
+			Scanner scan = new Scanner(System.in);
+			do{
+			System.out.println("Enter your Equation:");
+			String equation = scan.next();
+			
+			if(!equation.equalsIgnoreCase("exit"))
+			{
+			
 			String sendMessage = equation + "\n";
-			bw.write(sendMessage);
-			bw.flush();
+			pw.println(sendMessage);
 			System.out.println("Message sent to the server : " + sendMessage);
 
 			// Get the return message from the server
@@ -36,15 +33,14 @@ public class Client {
 			BufferedReader br = new BufferedReader(isr);
 			String message = br.readLine();
 			System.out.println("Message received from the server : " + message);
+			}
+			else{
+				scan.close();
+				System.exit(0);
+			}
+			} while(true);
 		} catch (Exception exception) {
 			exception.printStackTrace();
-		} finally {
-			// Closing the socket
-			try {
-				socket.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		} 
 	}
 }
