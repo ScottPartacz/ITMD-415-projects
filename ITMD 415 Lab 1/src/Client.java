@@ -28,9 +28,7 @@ public class Client {
 			System.out.println("Message sent to the server : " + sendMessage);
 
 			// Get the return message from the server
-			InputStream is = socket.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is);
-			BufferedReader br = new BufferedReader(isr);
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			String message = br.readLine();
 			System.out.println("Message received from the server : " + message);
 			}
