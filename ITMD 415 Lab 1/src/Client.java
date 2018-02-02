@@ -21,12 +21,11 @@ public class Client {
 			
 			String sendMessage = equation + "\n";
 			pw.println(sendMessage);
-			System.out.println("Message sent to the server : " + sendMessage);
 
 			// Get the return message from the server
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			String message = br.readLine();
-			System.out.println("Message received from the server : " + message);
+			System.out.println("\n" + message + "\n");
 			}
 			else{
 				scan.close();

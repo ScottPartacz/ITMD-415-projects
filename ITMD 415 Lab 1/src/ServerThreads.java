@@ -25,7 +25,13 @@ public class ServerThreads extends Thread{
 			do {
 				// Reading the message from the client
 				String equation = br.readLine();
-				if(!equation.equals(""))
+				String blank = br.readLine();
+				if(equation.equalsIgnoreCase("count"))
+				{
+					returnMessage = "SERVER 515OK: " + (Thread.activeCount() - 1) + " Client(s) Connected";
+					pw.println(returnMessage);
+				}
+				if(!equation.equals("") && !equation.equalsIgnoreCase("count"))
 				{
 				array = equation.split("[-+/%*]");
 
@@ -41,7 +47,7 @@ public class ServerThreads extends Thread{
 						char temp = equation.charAt(i);
 						if(!equation.matches("[0-9+-/%*]+") || (equation.matches("[0-9]+") && !equation.matches("[+-/%*]+")) || (!equation.matches("[0-9]+") && equation.matches("[+-/%*]+")) || componets.size() > 2)
 						{
-							returnMessage = "Invaild expression";
+							returnMessage = "SERVER 514ERROR: Invaild expression";
 							pw.println(returnMessage);
 							componets.clear();
 							answer = -1;
@@ -78,7 +84,7 @@ public class ServerThreads extends Thread{
 					}
 				if(!(answer == -1))
 				{
-				returnMessage = equation + " = " + answer;
+				returnMessage = "SERVER 515OK: " + equation + " = " + answer;
 			
 				// Sending the response back to the client.
 				pw.println(returnMessage);

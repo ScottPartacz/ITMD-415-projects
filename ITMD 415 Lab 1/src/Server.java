@@ -1,10 +1,10 @@
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
+
 
 public class Server {
 	
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args) throws IOException,SocketException
 	{
 		int port = 2500;
 		ServerSocket serverSocket = new ServerSocket(port);
