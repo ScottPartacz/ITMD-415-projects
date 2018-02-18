@@ -4,27 +4,31 @@
 </head>
 <body>
 	<main>
-	<form id='sign-up' action='validateformdata.jsp' method='POST'>
+	<form id='sign-up' action='' method='POST'>
         <ol>
 		   <li>
             <label for='name'>Name</label>
-            <input type='text' id='name' name='name'  />
-          </li>
-		  <li>
-            <label for='city'>City</label>
-            <input type='text' id='city' name='city'  />
+            <input type='text' id='name' name='name' pattern="[A-Za-z]{4,50}" title="4-50 letters"/>
           </li>
 		   <li>
-            <label for='street'>Address</label>
-            <input type='text' id='street' name='street'  />
+            <label for='ssn'>SSN</label>
+            <input type='text' id='ssn' name='ssn' />
           </li>
-          <li>
+		  <li>
             <label for='zip'>Zip Code</label>
             <input type='text' id='zip' name='zip'  />
           </li>
-          <li>
+		  <li>
             <label for='email'>Email Address</label>
             <input type='text' id='email' name='email'  />
+          </li>
+		   <li>
+            <label for='street'>Address</label>
+            <input type='text' id='street' name='street'  pattern="[A-Za-z0-9]{4,50}" title="4-50 letters/numbers"/>
+          </li>
+		  <li>
+            <label for='city'>City</label>
+            <input type='text' id='city' name='city'  pattern="[A-Za-z]{3,50}" title="3-50 letters"/>
           </li>
           <li>
             <label for='state'>State</label>
@@ -82,10 +86,6 @@
 				<option value="WV">WV</option>
 				<option value="WY">WY</option>
 			</select>
-          </li>
-		   <li>
-            <label for='ssn'>SSN</label>
-            <input type='text' id='ssn' name='ssn' />
           </li>
         </ol>
         <input id='submitForm' type='submit' value='Submit!'/>
