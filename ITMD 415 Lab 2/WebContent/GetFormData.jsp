@@ -1,12 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel='stylesheet' href='css/screen.css' />
-<title>Please fill out the forum</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
-	<main>
-	<h1> Enter your info below: </h1>
-	<form id='sign-up' action='' method='POST'>
+<h1> Enter your info below: </h1>
+	<form id='sign-up' action='ValidateFormData.jsp" ' method='POST'>
         <ol>
 		   <li>
             <label for='name'>Name</label>
@@ -92,7 +95,5 @@
         </ol>
         <input id='submitForm' type='submit' value='Submit!'/>
       </form>
-	</main>
 </body>
-
 </html>
