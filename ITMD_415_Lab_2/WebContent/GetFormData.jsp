@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel='stylesheet' href='css/screen.css' />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Form</title>
 </head>
 <body>
 <h1> Enter your info below: </h1>
-	<form id='sign-up' action='ValidateFormData.jsp" ' method='POST'>
+	<form id='sign-up' action='ValidateFormDate' method='POST'>
         <ol>
 		   <li>
             <label for='name'>Name</label>
@@ -29,7 +30,7 @@
           </li>
 		   <li>
             <label for='street'>Address</label>
-            <input type='text' id='street' name='street' required="required" pattern="[A-Za-z0-9]{4,50}" title="4-50 letters/numbers"/>
+            <input type='text' id='street' name='street' required="required" pattern="[A-Za-z0-9_ ]{4,50}" title="4-50 letters/numbers"/>
           </li>
 		  <li>
             <label for='city'>City</label>
