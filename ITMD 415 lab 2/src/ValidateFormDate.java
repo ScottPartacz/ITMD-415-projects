@@ -95,7 +95,6 @@ public class ValidateFormDate extends HttpServlet {
 			vaild = false;
 		}
 		
-		vaild = true;
 		
 		if(vaild)
 		{
