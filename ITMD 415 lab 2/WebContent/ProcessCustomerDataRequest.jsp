@@ -31,6 +31,7 @@
 		<li> Address: <%= address %> </li>
 		<li> City: <%= city  %> </li>
 		<li> State: <%= state  %> </li>
+		<li id="lat">  </li>
 	</ol>
 	<div id="map" style="width:100%;height:400px;"></div>
 	<script>
@@ -50,6 +51,8 @@
         geocoder.geocode({'address': address}, function(results, status) {
           if (status === 'OK') {
             resultsMap.setCenter(results[0].geometry.location);
+
+	    document.getElementById("lat").innerHTML="(Latitude,Longitude): " + results[0].geometry.location;
             
             var marker = new google.maps.Marker({
               map: resultsMap,
