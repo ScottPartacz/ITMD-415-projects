@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Carselling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<seller>
+		<id>1</id>
+		<username>clif123</username>
+		<password>qweirtc</password>
+	</seller>
+	<seller>
+		<id>2</id>
+		<username>fli12r5</username>
+		<password>asdjgrw</password>
+	</seller>
+	<seller>
+		<id>3</id>
+		<username>orit22</username>
+		<password>orityrw</password>
+	</seller>
+	<seller>
+		<id>4</id>
+		<username>rmgseat</username>
+		<password>rmg3255</password>
+	</seller>
+	<seller>
+		<id>5</id>
+		<username>gotasc</username>
+		<password>g14555</password>
+	</seller>
+</Carselling>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Carselling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<customer>
+		<id>1</id>
+		<firstname>Feng</firstname>
+		<lastname>Li</lastname>
+		<creditscore>743</creditscore>
+	</customer>
+	<customer>
+		<id>2</id>
+		<firstname>Oskar</firstname>
+		<lastname>Meine</lastname>
+		<creditscore>777</creditscore>
+	</customer>
+	<customer>
+		<id>3</id>
+		<firstname>Annette</firstname>
+		<lastname>Klemens</lastname>
+		<creditscore>862</creditscore>
+	</customer>
+	<customer>
+		<id>4</id>
+		<firstname>Fillin</firstname>
+		<lastname>Jarlath</lastname>
+		<creditscore>437</creditscore>
+	</customer>
+	<customer>
+		<id>5</id>
+		<firstname>Aodhagán</firstname>
+		<lastname>Doireann</lastname>
+		<creditscore>261</creditscore>
+	</customer>
+</Carselling>
