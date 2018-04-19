@@ -1,0 +1,78 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+*/
+/* stylelint-disable*/
+
+/* stylelint-enable */
+
+
+/* Forms, taken from CSS normalize.
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+html {
+  font-size: 1.2em; 
+  line-height: 1.3rem; 
+}
+
+body {
+  padding: 1.222rem; 
+}
+
+form {
+  padding-top: 0.6111rem;
+}
+
+h1 {
+  font-size: 2.5rem; 
+  line-height: 3.0rem; 
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: .4rem .8rem;
+    margin: .6rem 0;
+    display: inline-block;
+    border: .1rem solid #ccc;
+    border-radius: .05rem;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    padding: .4rem .8rem;
+    margin: .6rem 0;
+    border: none;
+    border-radius: .6rem;
+    cursor: pointer;
+}
+
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: #fff; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: #000; 
+	background-color: #fff; 
+	} 
