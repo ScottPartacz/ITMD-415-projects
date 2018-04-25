@@ -1,9 +1,9 @@
 package Model.entities;
 
-public class Goods {
+public class Cars {
 
-	private String goodsid;
-	private String goodsname;
+	private String carid;
+	private String model;
 	private int amount;
 	private float price;
 	private String sellerid;
@@ -21,17 +21,17 @@ public class Goods {
 	public void setSellerid(String sellerid) {
 		this.sellerid = sellerid;
 	}
-	public String getGoodsid() {
-		return goodsid;
+	public String getCarid() {
+		return carid;
 	}
-	public void setGoodsid(String goodsid) {
-		this.goodsid = goodsid;
+	public void setCarid(String carid) {
+		this.carid = carid;
 	}
-	public String getGoodsname() {
-		return goodsname;
+	public String getModel() {
+		return model;
 	}
-	public void setGoodsname(String goodsname) {
-		this.goodsname = goodsname;
+	public void setmodelname(String model) {
+		this.model = model;
 	}
 	public int getAmount() {
 		return amount;

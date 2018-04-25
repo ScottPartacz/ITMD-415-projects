@@ -146,7 +146,7 @@ font: 20px Georgia, "Times New Roman", Times, serif;
   height:30px;
   text-align: center;  
 }
-#goodslist{
+#carslist{
  display:none;
 }
 #update{
@@ -160,31 +160,31 @@ window.onload=function(){
 	 function showorder(){
 		 $('#orderlist').show();
 		 $('#input').hide();
-		 $('#goodslist').hide();
+		 $('#carslist').hide();
 		 $('#update').hide();
 		 
 	 }
 	 function showupdate(){
 		 $('#orderlist').hide();
 		 $('#input').hide();
-		 $('#goodslist').hide();
+		 $('#carslist').hide();
 		 $('#update').show();
 	 }
-	 function showgoods(){
+	 function showcars(){
 		 $('#orderlist').hide();
 		 $('#input').hide();
-		 $('#goodslist').show();
+		 $('#carslist').show();
 		 $('#update').hide();
 	 }
 	 function showinput(){
 		 $('#orderlist').hide();
 		 $('#input').show();
-		 $('#goodslist').hide();
+		 $('#carslist').hide();
 		 $('#update').hide();
 	 }
 	 document.getElementById("3").addEventListener('click',showorder,false);
 	 document.getElementById("4").addEventListener('click',showupdate,false);
-	 document.getElementById("2").addEventListener('click',showgoods,false);
+	 document.getElementById("2").addEventListener('click',showcars,false);
 	 document.getElementById("1").addEventListener('click',showinput,false);
 	 }
 function check(form) {
@@ -208,14 +208,14 @@ function check(form) {
 	   }
 function check2(form) {
 
-	 if(form.addgoodid.value==''){
-	          alert("please input goodid!");
-	          form.addgoodid.focus();
+	 if(form.addcarid.value==''){
+	          alert("please input carid!");
+	          form.addcarid.focus();
 	          return false;
 	   }
-	 if(form.addgoodname.value==''){
-	     alert("please input goodname!");
-	     form.addgoodname.focus();
+	 if(form.addcarname.value==''){
+	     alert("please input carname!");
+	     form.addcarname.focus();
 	     return false;
 	}
 	 if(form.addamount.value==''){
@@ -258,8 +258,8 @@ String gid=(String)request.getSession().getAttribute("gid");
 
 
  <ul id="nav">
-  <li id="1"><a>Create good</a></li>
-  <li id="2"><a>View goods List</a></li>
+  <li id="1"><a>Create car</a></li>
+  <li id="2"><a>View cars List</a></li>
   <li id="3"><a>View order List</a></li>
   <li id="4"><a>Update account</a></li>
   <li><a href="index.jsp">Sign Out</a></li>
@@ -267,11 +267,11 @@ String gid=(String)request.getSession().getAttribute("gid");
 </div>
 
 <div id="input">
-	<span id="span1">Create a new Good</span>
+	<span id="span1">Create a new car</span>
 	<div id="create">
-	<form action="Controller/servlet/goodsServlet" method="post" onsubmit="return check2(this)">
-		<label><span>Goodid:</span> <input id="addgoodid" name="addgoodid" type="text"/></label><br>
-		<label><span>Goodname:</span> <input id="addgoodname" name="addgoodname" type="text"/></label><br>
+	<form action="Controller/servlet/carsServlet" method="post" onsubmit="return check2(this)">
+		<label><span>carid:</span> <input id="addcarid" name="addcarid" type="text"/></label><br>
+		<label><span>carname:</span> <input id="addcarname" name="addcarname" type="text"/></label><br>
 		<label><span>amount:</span> <input id="addamount" name="addamount" type="text"></label><br>
 		<label><span>price:</span> <input id="addprice" name="addprice" type="text" ></label><br>
 		<label><span>description:</span> <textarea id="description" name="description"></textarea></label><br>
@@ -300,7 +300,7 @@ String gid=(String)request.getSession().getAttribute("gid");
 	               {
 	            	  float price=0;
 	                  Order o=orderlist.get(i);
-	                  String[] prices=o.getGoodid().trim().split(" ");
+	                  String[] prices=o.getcarid().trim().split(" ");
 	                  for(int q=0;q<prices.length;q++){
 	                	  price+=Float.parseFloat(prices[q]);
 	                  }
@@ -327,28 +327,28 @@ String gid=(String)request.getSession().getAttribute("gid");
           %>
 </table>
  </div>
- <div id="goodslist">
-  <h1><%=u %>'s goods</h1>
+ <div id="carslist">
+  <h1><%=u %>'s cars</h1>
            <table >
  
           <tr>
-           <th>goodname</th>
+           <th>carname</th>
            <th>amount</th>
            <th>price</th>
            <th>sellerid</th>
           </tr>
           
            <% 
-           List<Goods> glist=(List<Goods>)session.getAttribute("glist");
+           List<Cars> glist=(List<Cars>)session.getAttribute("glist");
                if(glist!=null&&glist.size()>0)
                {
 	               for(int i=0;i<glist.size();i++)
 	               {
-	                  Goods g=glist.get(i);
+	                  Cars g=glist.get(i);
            %>   
              <tr>
                <td>
-                 <a href="Controller/servlet/goodsServlet?sellergoodid=<%=g.getGoodsid()%>"><%=g.getGoodsname() %></a>
+                 <a href="Controller/servlet/carsServlet?sellercarid=<%=g.getCarid()%>"><%=g.getModel() %></a>
                </td>
                <td class="dq">Amount:<%=g.getAmount() %></td><td>price$: <%=g.getPrice() %></td>
                <td>Sellerid:<%=g.getSellerid() %></td>

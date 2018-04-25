@@ -52,12 +52,12 @@ ul#nav li{display:inline; height:60px}
 ul#nav li a{display:inline-block; padding:0 20px; height:60px; line-height:60px; 
 color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:16px} 
 ul#nav li a:hover{background:#0095BB} 
-	   #goodlist{
+	   #carlist{
 	   font: 25px Georgia, "Times New Roman", Times, serif;
 	    float:left;
 	    width:1000px;
 	   }
-	   #goodlist div{
+	   #carlist div{
 	   
 	     float:left;
 	      margin: 10px;
@@ -96,7 +96,7 @@ ul#nav li a:hover{background:#0095BB}
    <li><a href="index.jsp"> Sign Out</a> </li>
    </ul>
   </div>  
-   <div id="goodlist">
+   <div id="carlist">
 
     <table  id="table">
       <tr>
@@ -104,19 +104,19 @@ ul#nav li a:hover{background:#0095BB}
           
            <% 
            String u=(String)session.getAttribute("user");
-           List<Goods> glist=(List<Goods>)session.getAttribute("glist");
+           List<Cars> glist=(List<Cars>)session.getAttribute("glist");
            List<seller> sellerlist=(List<seller>)session.getAttribute("sellerlist");
                if(glist!=null&&glist.size()>0)
                {
 	               for(int i=0;i<glist.size();i++)
 	               {
-	                  Goods g=glist.get(i);
+	                  Cars g=glist.get(i);
 	                 seller se= sellerlist.get(i);
            %>   
           <div>
              <dl>
                <dt>
-                 <a href="Controller/servlet/goodsServlet?id=<%=g.getGoodsid()%>"><%=g.getGoodsname() %></a>
+                 <a href="Controller/servlet/carsServlet?id=<%=g.getCarid()%>"><%=g.getModel() %></a>
                </dt>
                <dd class="dq">sellername:<%=se.getUsername() %>&nbsp;&nbsp;price$: <%=g.getPrice() %></dd> 
              </dl>

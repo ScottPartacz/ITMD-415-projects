@@ -14,7 +14,7 @@ import Controller.service.CustomerService;
 import Controller.service.LoginService;
 import Controller.service.SellerService;
 import Controller.service.Userservice;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.Order;
 import Model.entities.seller;
 
@@ -53,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
 			//System.out.println(boo);
 			if(boo&&role.equals("customer")) {
 				 CustomerService Cservice=new CustomerService();
-			        List<Goods> glist=Cservice.viewGoodslist();
+			        List<Cars> glist=Cservice.viewCarslist();
 			        SellerService s=new SellerService();
 			        List<seller> sellerlist=new ArrayList<seller>();
 			        for(int i=0;i<glist.size();i++) {

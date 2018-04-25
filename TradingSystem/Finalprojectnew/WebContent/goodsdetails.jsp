@@ -68,12 +68,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <% 
-  Goods g=(Goods)session.getAttribute("good");
+  Cars g=(Cars)session.getAttribute("car");
   seller s=(seller)session.getAttribute("seller"); 
   %>
   <div id="content">
   <div id="header">
-    <h1>Good detail</h1>
+    <h1>car detail</h1>
      <hr>
     </div>
     <div id="table">
@@ -86,10 +86,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           %>
           <td width="70%" valign="top">
                <tr>
-                 <td><B>goodid:<%=g.getGoodsid() %></B></td> 
+                 <td><B>carid:<%=g.getCarid() %></B></td> 
                </tr>
                <tr>
-                 <td>Goodname:<%=g.getGoodsname()%></td>
+                 <td>carname:<%=g.getModel()%></td>
                </tr>
                <tr>
                  <td>price:<%=g.getPrice() %></td>
@@ -112,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     </div>
     <div id="button-wrapper">
-				<a href="Controller/servlet/orderServlet?goodid=<%=g.getGoodsid()%>"><button id="order">add it to cart</button></a>
+				<a href="Controller/servlet/orderServlet?carid=<%=g.getcarsid()%>"><button id="order">add it to cart</button></a>
 				<a href="cart.jsp"><button id="showcart">show my cart</button></a>
 				<a href="indexCustomer.jsp"><button id="return">return</button></a>
    </div>

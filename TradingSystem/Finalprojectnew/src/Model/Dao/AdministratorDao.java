@@ -24,7 +24,7 @@ public class AdministratorDao implements AdministratorOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		try {
-			String sql="delete from hq_customers where Userid="+"'"+customerid+"'";
+			String sql="delete from hq_customers10 where Userid="+"'"+customerid+"'";
 			stat = conn.createStatement();
 			stat.executeUpdate(sql);
 		stat.close();
@@ -42,7 +42,7 @@ public class AdministratorDao implements AdministratorOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		try {
-			String sql="delete from sellers where Userid="+"'"+sellerid+"'";
+			String sql="delete from sellers10 where Userid="+"'"+sellerid+"'";
 			stat = conn.createStatement();
 			stat.executeUpdate(sql);
 		stat.close();
@@ -59,7 +59,7 @@ public class AdministratorDao implements AdministratorOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		try {
-			String sql="delete from orders where orderid="+"'"+orderid+"'";
+			String sql="delete from orders10 where orderid="+"'"+orderid+"'";
 			stat = conn.createStatement();
 			stat.executeUpdate(sql);
 		stat.close();
@@ -106,7 +106,7 @@ public class AdministratorDao implements AdministratorOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		ResultSet res=null;
-		String sql="select * from administrators where userid="+" '"+userid+"' ";
+		String sql="select * from administrators10 where userid="+" '"+userid+"' ";
 		Administrator a=new Administrator();
 		try {
 			stat = conn.createStatement();
@@ -137,7 +137,7 @@ public class AdministratorDao implements AdministratorOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		ResultSet res=null;
-		String sql="select * from hq_customers";
+		String sql="select * from hq_customers10";
 		List<customer> clist=new ArrayList<customer>();
 		try {
 			stat = conn.createStatement();
@@ -169,7 +169,7 @@ public class AdministratorDao implements AdministratorOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		ResultSet res=null;
-		String sql="select * from sellers";
+		String sql="select * from sellers10";
 		List<seller> slist=new ArrayList<seller>();
 		try {
 			stat = conn.createStatement();

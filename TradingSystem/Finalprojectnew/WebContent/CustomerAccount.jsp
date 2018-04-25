@@ -136,7 +136,7 @@ function check(form) {
    <li id="order"><a>See your orders</a></li>
   
    <li id="update"><a>Update your information</a></li>
-   <li><a href="indexCustomer.jsp">return to Goodslist</a></li>
+   <li><a href="indexCustomer.jsp">return to carslist</a></li>
    <li><a href="index.jsp">Sign Out</a></li>
  </ul>
 </div>

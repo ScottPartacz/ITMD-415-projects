@@ -86,14 +86,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id="content">
   <div id="header">
    <h1>My Cart</h1>
-   <a href="indexCustomer.jsp">Return to Goodslist</a>
+   <a href="indexCustomer.jsp">Return to carslist</a>
    <hr> 
    </div>
  
    <div id="shopping">	
 			<table id="table">
 				<tr>
-					<th>Goodname</th>
+					<th>carname</th>
 					<th>Stock</th>
 					<th>Price</th>
 					<th>Operation</th>
@@ -105,17 +105,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				%>
 				     <% 
 				     float f=0;
-				         List<Goods>Goodslist = (List<Goods>)request.getSession().getAttribute("cart");
-				     for(int i=0;i<Goodslist.size();i++){
-				    	 f+=Goodslist.get(i).getPrice();
+				         List<Cars>carslist = (List<Cars>)request.getSession().getAttribute("cart");
+				     for(int i=0;i<carslist.size();i++){
+				    	 f+=carslist.get(i).getPrice();
 				     }
-				         for(int i=0;i<Goodslist.size();i++){
+				         for(int i=0;i<carslist.size();i++){
 				     %> 
 				<tr name="products" id="product_id_1">
-					<td class="thumb"><%=Goodslist.get(i).getGoodsname()%></td>
-					<td class="number"><%=Goodslist.get(i).getAmount()%></td>
+					<td class="thumb"><%=carslist.get(i).getModel()%></td>
+					<td class="number"><%=carslist.get(i).getAmount()%></td>
 					<td class="price" id="price_id_1">
-						<span><%=Goodslist.get(i).getPrice() %></span>
+						<span><%=carslist.get(i).getPrice() %></span>
 						<input type="hidden" value="" />
 					</td>                     
                     <td class="delete">

@@ -14,7 +14,7 @@ import Model.entities.*;
 public class SellerDao implements sellerOperation{
 
 	@Override
-	public void createGood(String goodid, String goodname, String amount, String price,String sellerid,String description) {
+	public void createCar(String carid, String model, String amount, String price,String sellerid,String description) {
 		// TODO Auto-generated method stub
 		JDBC c=new JDBC();
 		Connection conn= c.getConnection();
@@ -23,8 +23,8 @@ public class SellerDao implements sellerOperation{
 		float p=Float.parseFloat(price);
 			try {
 				stat = conn.createStatement();
-	      String sql = "INSERT INTO goods (goodid,goodname,amount,price,sllerid,description) values("+"'"+goodid+"',"+
-		"'"+goodname+"',"+"'"+am+"',"+"'"+p+"',"+"'"+sellerid+"'"+","+"'"+description+"'"+")";
+	      String sql = "INSERT INTO cars10 (carid,model,amount,price,sllerid,description) values("+"'"+carid+"',"+
+		"'"+model+"',"+"'"+am+"',"+"'"+p+"',"+"'"+sellerid+"'"+","+"'"+description+"'"+")";
 	      
 		stat.executeUpdate(sql);
 		stat.close();
@@ -36,13 +36,13 @@ public class SellerDao implements sellerOperation{
 	}
 
 	@Override
-	public void updateGood(String goodid, String goodname, String amount, String price,String description) {
+	public void updateCar(String carid, String model, String amount, String price,String description) {
 		// TODO Auto-generated method stub
 		JDBC c=new JDBC();
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		try {
-			String sql="update goods set goodname= "+"'"+goodname+"'"+", amount="+"'"+amount+"'"+", price="+price+", description="+"'"+description+"'"+" where Goodid="+"'"+goodid+"'";
+			String sql="update cars10 set model= "+"'"+model+"'"+", amount="+"'"+amount+"'"+", price="+price+", description="+"'"+description+"'"+" where carid="+"'"+carid+"'";
 			stat = conn.createStatement();
 			stat.executeUpdate(sql);
 		stat.close();
@@ -54,13 +54,13 @@ public class SellerDao implements sellerOperation{
 	}
 
 	@Override
-	public void deleteGood(String goodid) {
+	public void deletecar(String carid) {
 		// TODO Auto-generated method stub
 		JDBC c=new JDBC();
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		try {
-			String sql="delete from goods where goodid="+"'"+goodid+"'";
+			String sql="delete from cars10 where carid="+"'"+carid+"'";
 			stat = conn.createStatement();
 			stat.executeUpdate(sql);
 		stat.close();
@@ -79,7 +79,7 @@ public class SellerDao implements sellerOperation{
 		Statement stat=null;
 			try {
 				stat = conn.createStatement();
-	      String sql = "INSERT INTO sellers (userid,username,password,address) values("+"'"+userid+"',"+
+	      String sql = "INSERT INTO sellers10 (userid,username,password,address) values("+"'"+userid+"',"+
 		"'"+username+"',"+"'"+password+"',"+"'"+address+"'"+")";
 	      
 		stat.executeUpdate(sql);
@@ -101,7 +101,7 @@ public class SellerDao implements sellerOperation{
 		
 			try {
 				stat = conn.createStatement();
-	      String sql = "update sellers set username="+"'"+username+"'"+", password="+"'"+password+"'"+", address="+"'"+address+"'"
+	      String sql = "update sellers10 set username="+"'"+username+"'"+", password="+"'"+password+"'"+", address="+"'"+address+"'"
 	    		  +" where userid="+"'"+userid+"'";
 	      
 		stat.executeUpdate(sql);
@@ -120,7 +120,7 @@ public class SellerDao implements sellerOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		ResultSet res=null;
-		String sql="select * from sellers where userid="+"'"+sellerid+"'";
+		String sql="select * from sellers10 where userid="+"'"+sellerid+"'";
 		seller s=new seller();
 		try {
 			stat = conn.createStatement();
@@ -144,26 +144,26 @@ public class SellerDao implements sellerOperation{
 	}
 
 	@Override
-	public List<Goods> viewGoods(String sellerid) {
+	public List<Cars> viewCars(String sellerid) {
 		// TODO Auto-generated method stub
 		JDBC c=new JDBC();
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		ResultSet res=null;
-		List<Goods> listgoods=new ArrayList<Goods>();
+		List<Cars> listcars=new ArrayList<Cars>();
 		try {
-			String sql="select * from goods where sllerid="+"'"+sellerid+"'";
+			String sql="select * from cars10 where sllerid="+"'"+sellerid+"'";
 			stat = conn.createStatement();
 			res=stat.executeQuery(sql);
 			while(res.next()) {
-				Goods g=new Goods();
-				g.setGoodsid(res.getString("Goodid"));
-				g.setGoodsname(res.getString("Goodname"));
+				Cars g=new Cars();
+				g.setCarid(res.getString("carid"));
+				g.setmodelname(res.getString("model"));
 				g.setAmount(res.getInt("Amount"));
 				g.setPrice(res.getFloat("Price"));
 				g.setSellerid(res.getString("sllerid"));
 				g.setDescription(res.getString("description"));
-				listgoods.add(g);
+				listcars.add(g);
 			}
 		res.close();
 		stat.close();
@@ -173,7 +173,7 @@ public class SellerDao implements sellerOperation{
 			e.printStackTrace();
 		}
 		
-		return listgoods;
+		return listcars;
 	}
 	
 

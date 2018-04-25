@@ -6,7 +6,7 @@ public class seller extends User{
 
 	private String address;
 	private Order order;
-	private List<Goods> goodlist;
+	private List<Cars> carlist;
 	public String getAddress() {
 		return address;
 	}
@@ -19,11 +19,11 @@ public class seller extends User{
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-	public List<Goods> getGoodlist() {
-		return goodlist;
+	public List<Cars> getCarlist() {
+		return carlist;
 	}
-	public void setGoodlist(List<Goods> goodlist) {
-		this.goodlist = goodlist;
+	public void setcarlist(List<Cars> carlist) {
+		this.carlist = carlist;
 	}
 	
 }

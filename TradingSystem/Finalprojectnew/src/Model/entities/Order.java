@@ -6,17 +6,17 @@ import java.util.List;
 public class Order{
 
 	private String orderid;
-	private String goodid;
+	private String carid;
 	private String customerid;
 	private String sellerid;
 	private String status;
 	private Date date;
 	
-	public String getGoodid() {
-		return goodid;
+	public String getcarid() {
+		return carid;
 	}
-	public void setGoodid(String goodid) {
-		this.goodid = goodid;
+	public void setCarid(String carid) {
+		this.carid = carid;
 	}
 	public String getSeller() {
 		return sellerid;
@@ -48,7 +48,7 @@ public class Order{
 	public void setUserid(String customerid) {
 		this.customerid = customerid;
 	}
-	public boolean checkGoodsAmount(List<Goods> listg){
+	public boolean checkcarsAmount(List<Cars> listg){
 		return true;
 	}
 	

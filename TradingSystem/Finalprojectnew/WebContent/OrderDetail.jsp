@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <% 
              String role=(String)request.getSession().getAttribute("role");
              Order o=(Order)session.getAttribute("orderdetail");
-             List<Goods> g=(List<Goods>)session.getAttribute("goodsdetail");
+             List<Cars> g=(List<Cars>)session.getAttribute("carsdetail");
              List<seller> sl=(List<seller>)session.getAttribute("sellerlist2");
              float price=0;
              for(int i=0;i<g.size();i++){
@@ -115,18 +115,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div id="right">  
      <table>
      <tr>
-     <th>Goodname</th>
+     <th>carname</th>
      <th>Sellername</th>
      <th>Price</th>
      </tr>
       <%
         for(int i=0;i<g.size();i++){
         	
-        	Goods gdetail=g.get(i);
+        	Cars gdetail=g.get(i);
         	seller s=sl.get(i);
       %>
       <tr>
-       <td>Goodname:<%=gdetail.getGoodsname() %></td>
+       <td>carname:<%=gdetail.getModel() %></td>
        <td>Sellername:<%=s.getUsername() %></td>
        <td>Price:<%=gdetail.getPrice()%></td>
       </tr>

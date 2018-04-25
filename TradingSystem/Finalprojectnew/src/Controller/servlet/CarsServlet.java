@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import Controller.service.CustomerService;
 import Controller.service.SellerService;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.seller;
 
 /**
- * Servlet implementation class goodsServlet
+ * Servlet implementation class CarsServlet
  */
-@WebServlet("/goodsServlet")
-public class goodsServlet extends HttpServlet {
+@WebServlet("/CarsServlet")
+public class CarsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public goodsServlet() {
+    public CarsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,97 +36,97 @@ public class goodsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		CustomerService custservice=new CustomerService();
 		 SellerService s=new SellerService();
-		 if(request.getParameter("deletegoodid") != null) {
-				String goodid=request.getParameter("deletegoodid");
-				s.deletegood(goodid);
+		 if(request.getParameter("deletecarid") != null) {
+				String carid=request.getParameter("deletecarid");
+				s.deletecar(carid);
 			}
 		if(((String)request.getSession().getAttribute("role")).equals("customer")) {
-		String goodid=request.getParameter("id");
+		String carid=request.getParameter("id");
 		
-		Goods g=custservice.viewGooddetail(goodid);
+		Cars g=custservice.viewcardetail(carid);
 		
 		seller seller= s.selectSeller(g.getSellerid());
-		request.getSession().setAttribute("good", g);
+		request.getSession().setAttribute("car", g);
 		request.getSession().setAttribute("seller", seller);
-		response.sendRedirect("/Finalprojectnew/goodsdetails.jsp");
+		response.sendRedirect("/Finalprojectnew/Carsdetails.jsp");
 		}else if(((String)request.getSession().getAttribute("role")).equals("seller")) {
 			String sellerid=(String)request.getSession().getAttribute("userid");
-			if(request.getParameter("sellergoodid") != null) {
-				String goodid=request.getParameter("sellergoodid");
-				Goods g=custservice.viewGooddetail(goodid);
+			if(request.getParameter("sellercarid") != null) {
+				String carid=request.getParameter("sellercarid");
+				Cars g=custservice.viewcardetail(carid);
 				seller seller= s.selectSeller(g.getSellerid());
-				request.getSession().setAttribute("good", g);
+				request.getSession().setAttribute("car", g);
 				request.getSession().setAttribute("seller", seller);
-				response.sendRedirect("/Finalprojectnew/Sellergoodsdetail.jsp");
-			}else if(request.getParameter("updategoodid") != null){
-				if(request.getParameter("addgoodname")!=null
+				response.sendRedirect("/Finalprojectnew/SellerCarsdetail.jsp");
+			}else if(request.getParameter("updatecarid") != null){
+				if(request.getParameter("addcarname")!=null
 						&&request.getParameter("addamount")!=null&&request.getParameter("addprice")!=null) {
 					    
-					Goods g=new Goods();
-					g.setGoodsid(request.getParameter("updategoodid"));
-					g.setGoodsname(request.getParameter("addgoodname"));
+					Cars g=new Cars();
+					g.setCarid(request.getParameter("updatecarid"));
+					g.setmodelname(request.getParameter("addcarname"));
 					g.setAmount(Integer.parseInt(request.getParameter("addamount")));
 					g.setPrice(Float.parseFloat(request.getParameter("addprice")));
 					g.setSellerid((String) request.getSession().getAttribute("userid"));
 					g.setDescription((String)request.getParameter("description"));
-					s.updategood(g);
-					request.getSession().setAttribute("good", g);
+					s.updatecar(g);
+					request.getSession().setAttribute("car", g);
 				}
 				
-				List<Goods> glist=s.goodslist(sellerid);
+				List<Cars> glist=s.Carslist(sellerid);
 				request.getSession().setAttribute("glist", glist);
-				response.sendRedirect("/Finalprojectnew/Sellergoodsdetail.jsp");
+				response.sendRedirect("/Finalprojectnew/SellerCarsdetail.jsp");
 				
 			}else {
 			
 			
-			if(request.getParameter("addgoodid")!=null&&request.getParameter("addgoodname")!=null
+			if(request.getParameter("addcarid")!=null&&request.getParameter("addcarname")!=null
 					&&request.getParameter("addamount")!=null&&request.getParameter("addprice")!=null) {
-				   if(custservice.viewGooddetail(request.getParameter("addgoodid"))!=null) {
-					   request.getSession().setAttribute("gid", " create fail! please change a new goodid");
+				   if(custservice.viewcardetail(request.getParameter("addcarid"))!=null) {
+					   request.getSession().setAttribute("gid", " create fail! please change a new carid");
 				   } 
-				Goods g=new Goods();
-				g.setGoodsid(request.getParameter("addgoodid"));
-				g.setGoodsname(request.getParameter("addgoodname"));
+				Cars g=new Cars();
+				g.setCarid(request.getParameter("addcarid"));
+				g.setmodelname(request.getParameter("addcarname"));
 				g.setAmount(Integer.parseInt(request.getParameter("addamount")));
 				g.setPrice(Float.parseFloat(request.getParameter("addprice")));
 				g.setSellerid((String) request.getSession().getAttribute("userid"));
 				g.setDescription((String)request.getParameter("description"));
-				s.creategood(g);
+				s.createcar(g);
 				
 			}
-			List<Goods> glist=s.goodslist(sellerid);
+			List<Cars> glist=s.Carslist(sellerid);
 			request.getSession().setAttribute("glist", glist);
 			response.sendRedirect("/Finalprojectnew/Sellerindex.jsp");
 			}
 		}else if(((String)request.getSession().getAttribute("role")).equals("administrator")){
-			if(request.getParameter("sellergoodid") != null) {
-				String goodid=request.getParameter("sellergoodid");
-				Goods g=custservice.viewGooddetail(goodid);
+			if(request.getParameter("sellercarid") != null) {
+				String carid=request.getParameter("sellercarid");
+				Cars g=custservice.viewcardetail(carid);
 				seller seller= s.selectSeller(g.getSellerid());
-				request.getSession().setAttribute("good", g);
+				request.getSession().setAttribute("car", g);
 				request.getSession().setAttribute("seller", seller);
-				response.sendRedirect("/Finalprojectnew/Sellergoodsdetail.jsp");
-			}else if(request.getParameter("updategoodid") != null){
-				if(request.getParameter("addgoodname")!=null
+				response.sendRedirect("/Finalprojectnew/SellerCarsdetail.jsp");
+			}else if(request.getParameter("updatecarid") != null){
+				if(request.getParameter("addcarname")!=null
 						&&request.getParameter("addamount")!=null&&request.getParameter("addprice")!=null) {
 					    
-					Goods g=new Goods();
-					g.setGoodsid(request.getParameter("updategoodid"));
-					g.setGoodsname(request.getParameter("addgoodname"));
+					Cars g=new Cars();
+					g.setCarid(request.getParameter("updatecarid"));
+					g.setmodelname(request.getParameter("addcarname"));
 					g.setAmount(Integer.parseInt(request.getParameter("addamount")));
 					g.setPrice(Float.parseFloat(request.getParameter("addprice")));
 					g.setSellerid((String) request.getSession().getAttribute("userid"));
 					g.setDescription((String)request.getParameter("description"));
-					s.updategood(g);
-					request.getSession().setAttribute("good", g);
+					s.updatecar(g);
+					request.getSession().setAttribute("car", g);
 				}
-				List<Goods>glist= custservice.viewGoodslist();
+				List<Cars>glist= custservice.viewCarslist();
 				request.getSession().setAttribute("glist", glist);
-				response.sendRedirect("/Finalprojectnew/Sellergoodsdetail.jsp");
+				response.sendRedirect("/Finalprojectnew/SellerCarsdetail.jsp");
 				
 			}else {
-			List<Goods>glist= custservice.viewGoodslist();
+			List<Cars>glist= custservice.viewCarslist();
 			request.getSession().setAttribute("glist", glist);
 			response.sendRedirect("/Finalprojectnew/indexAdministrator.jsp");
 			}

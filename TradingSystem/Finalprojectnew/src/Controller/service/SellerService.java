@@ -4,7 +4,7 @@ import java.util.List;
 
 import Model.Dao.SellerDao;
 import Model.DaoImpl.sellerOperation;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.seller;
 
 public class SellerService {
@@ -14,20 +14,20 @@ public class SellerService {
 		seller seller=s.selectSeller(sellerid);
 		return seller;
 	}
-	public List<Goods> goodslist(String sellerid) {
+	public List<Cars> Carslist(String sellerid) {
 		
-		List<Goods> goodslist=s.viewGoods(sellerid);
-		return goodslist;
+		List<Cars> carslist=s.viewCars(sellerid);
+		return carslist;
 	}
-	public void creategood(Goods g) {
-		s.createGood(g.getGoodsid(), g.getGoodsname(), String.valueOf(g.getAmount()), String.valueOf(g.getPrice()), g.getSellerid(),g.getDescription());
+	public void createcar(Cars g) {
+		s.createCar(g.getCarid(), g.getModel(), String.valueOf(g.getAmount()), String.valueOf(g.getPrice()), g.getSellerid(),g.getDescription());
 	}
-	public void deletegood(String goodid) {
-		s.deleteGood(goodid);
+	public void deletecar(String carid) {
+		s.deletecar(carid);
 	}
-	public void updategood(Goods g) {
+	public void updatecar(Cars g) {
 		
-		s.updateGood(g.getGoodsid(), g.getGoodsname(), String.valueOf(g.getAmount()), String.valueOf(g.getPrice()), g.getDescription());
+		s.updateCar(g.getCarid(), g.getModel(), String.valueOf(g.getAmount()), String.valueOf(g.getPrice()), g.getDescription());
 	}
 
 }

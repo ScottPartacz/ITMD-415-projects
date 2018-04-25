@@ -66,10 +66,10 @@ td, th {
  float:left;
  margin-left:5px;
 }
-#goodslist{
+#carslist{
  display:none; 
 }
-#goodslist h1{
+#carslist h1{
  float:left;
  margin-left:5px;
 }
@@ -95,31 +95,31 @@ window.onload=function(){
 	 function showorder(){
 		 $('#orderlist').show();
 		 $('#customerslist').hide();
-		 $('#goodslist').hide();
+		 $('#carslist').hide();
 		 $('#sellerslist').hide();
 		 
 	 }
 	 function showcustomers(){
 		 $('#orderlist').hide();
 		 $('#customerslist').show();
-		 $('#goodslist').hide();
+		 $('#carslist').hide();
 		 $('#sellerslist').hide();
 	 }
-	 function showgoods(){
+	 function showcars(){
 		 $('#orderlist').hide();
 		 $('#customerslist').hide();
-		 $('#goodslist').show();
+		 $('#carslist').show();
 		 $('#sellerslist').hide();
 	 }
 	 function showsellers(){
 		 $('#orderlist').hide();
 		 $('#customerslist').hide();
-		 $('#goodslist').hide();
+		 $('#carslist').hide();
 		 $('#sellerslist').show();
 	 }
 	 document.getElementById("1").addEventListener('click',showorder,false);
 	 document.getElementById("4").addEventListener('click',showsellers,false);
-	 document.getElementById("3").addEventListener('click',showgoods,false);
+	 document.getElementById("3").addEventListener('click',showcars,false);
 	 document.getElementById("2").addEventListener('click',showcustomers,false);
 	 }
 </script>
@@ -134,7 +134,7 @@ String userid=(String)request.getSession().getAttribute("userid");
 </div>
  <ul id="nav">
   <li id="1"><a>view order list</a></li>
-  <li id="3"><a>View goods List</a></li>
+  <li id="3"><a>View cars List</a></li>
   <li id="2"><a>View Customers list</a></li>
   <li id="4"><a>View Sellers list</a></li>
   <li><a href="index.jsp">Sign Out</a></li>
@@ -182,30 +182,30 @@ String userid=(String)request.getSession().getAttribute("userid");
           %>
        </table>
  </div>
-  <div id="goodslist">
-  <h1>Goodslist</h1>
+  <div id="carslist">
+  <h1>carslist</h1>
            <table>
           <tr>
-           <th>Goodid</th>
+           <th>carid</th>
            <th>Amount</th>
            <th>Price</th>
            <th>Operation</th>
           </tr>
           <!-- 商品循环开始 -->
            <% 
-           List<Goods> glist=(List<Goods>)session.getAttribute("glist");
+           List<Cars> glist=(List<Cars>)session.getAttribute("glist");
                if(glist!=null&&glist.size()>0)
                {
 	               for(int i=0;i<glist.size();i++)
 	               {
-	                  Goods g=glist.get(i);
+	                  Cars g=glist.get(i);
            %>   
           <tr>           
                <td>
-                 <a href="Controller/servlet/goodsServlet?sellergoodid=<%=g.getGoodsid()%>"><%=g.getGoodsname() %></a>
+                 <a href="Controller/servlet/carsServlet?sellercarid=<%=g.getCarid()%>"><%=g.getModel() %></a>
                </td>
                <td class="dq">Amount:<%=g.getAmount() %></td><td>price$: <%=g.getPrice() %></td> 
-               <td><a href="Controller/servlet/goodsServlet?deletegoodid=<%=g.getGoodsid()%>"><button id="delete">Delete</button></a></td>
+               <td><a href="Controller/servlet/carsServlet?deletecarid=<%=g.getCarid()%>"><button id="delete">Delete</button></a></td>
           
           </tr>
           <%

@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <% 
       String id = (String)request.getSession().getAttribute(("cancelorderid"));
       %>
-              You have canceled the good:<%=id%></div>
+              You have canceled the car:<%=id%></div>
        <div id="back"><a href="CustomerAccount.jsp">return to your account</a></div>
 </div>
 </body>

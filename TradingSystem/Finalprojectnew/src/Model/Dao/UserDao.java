@@ -6,13 +6,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import Model.DaoImpl.UserOperation;
 import Model.JDBC.JDBC;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.Order;
 
-public class UserDao implements UserOperation{
+public  class UserDao implements UserOperation{
 
 
 	@Override
@@ -22,7 +21,7 @@ public class UserDao implements UserOperation{
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		try {
-			String sql="update orders set status='cancel' where orderid="+orderid;
+			String sql="update orders10 set status='cancel' where orderid="+orderid;
 			stat = conn.createStatement();
 			stat.executeUpdate(sql);
 		stat.close();
@@ -34,22 +33,22 @@ public class UserDao implements UserOperation{
 		
 	}
 	@Override
-	public List<Goods> viewGoodslist() {
+	public List<Cars> viewCarlist() {
 		// TODO Auto-generated method stub
 		
 		JDBC c=new JDBC();
 		Connection conn= c.getConnection();
-		List<Goods> list=new ArrayList<Goods>();
+		List<Cars> list=new ArrayList<Cars>();
 		Statement stat=null;
 		ResultSet res=null;
-		String sql="select * from goods";
+		String sql="select * from cars10";
 		try {
 			stat = conn.createStatement();
 		res= stat.executeQuery(sql);
 		while(res.next()) {
-			Goods g=new Goods();
-			g.setGoodsid(res.getString("Goodid"));
-			g.setGoodsname(res.getString("Goodname"));
+			Cars g=new Cars();
+			g.setCarid(res.getString("carid"));
+			g.setmodelname(res.getString("model"));
 			g.setAmount(Integer.parseInt(res.getString("amount")));
 			g.setPrice(Float.parseFloat(res.getString("price")));
 			g.setSellerid(res.getString("sllerid"));
@@ -76,9 +75,9 @@ public class UserDao implements UserOperation{
 		ResultSet res=null;
 		String sql="select * from ";
 		if(role.toLowerCase().equals("customer")) {
-			sql+="orders where Customerid="+"'"+userid+"'";
+			sql+="orders10 where Customerid="+"'"+userid+"'";
 		}else if(role.toLowerCase().equals("seller")){
-			sql+="orders where Sellerid="+"'"+userid+"'";
+			sql+="orders10 where Sellerid="+"'"+userid+"'";
 		}else {
 			sql+="orders";
 		}
@@ -92,7 +91,7 @@ public class UserDao implements UserOperation{
 			o.setDate(res.getDate("Date"));
 			o.setStatus(res.getString("status"));
 			o.setUserid(res.getString("customerid"));
-			o.setGoodid(res.getString("Goodid"));
+			o.setCarid(res.getString("Carid"));
 			list.add(o);
 		}
 		stat.close();
@@ -105,24 +104,23 @@ public class UserDao implements UserOperation{
 	return list;
 	}
 
-
 	@Override
-	public Goods Gooddetail(String goodid) {
+	public Cars Cardetail(String carid) {
 		// TODO Auto-generated method stub
 		JDBC c=new JDBC();
 		Connection conn= c.getConnection();
 		Statement stat=null;
 		ResultSet res=null;
-		String sql="select * from Goods where Goodid="+"'"+goodid+"'";
-		Goods g=new Goods();
+		String sql="select * from cars10 where carid="+"'"+carid+"'";
+		Cars g=new Cars();
 		try {
 			stat = conn.createStatement();
 		res= stat.executeQuery(sql);
 
 		while(res.next()) {
 			
-			g.setGoodsid(res.getString("Goodid"));
-			g.setGoodsname(res.getString("Goodname"));
+			g.setCarid(res.getString("carid"));
+			g.setmodelname(res.getString("model"));
 			g.setAmount(Integer.parseInt(res.getString("amount")));
 			g.setPrice(Float.parseFloat(res.getString("price")));
 			g.setSellerid(res.getString("sllerid"));
@@ -147,14 +145,14 @@ public class UserDao implements UserOperation{
 		ResultSet res=null;
 		try {
 			stat = conn.createStatement();
-		res= stat.executeQuery("select * from orders where orderid="+orderid);
+		res= stat.executeQuery("select * from orders10 where orderid="+orderid);
 			while(res.next()) {
 			o.setOrderid(res.getString("orderid"));
 			o.setSeller(res.getString("sellerid"));
 			o.setDate(res.getDate("Date"));
 			o.setStatus(res.getString("status"));
 			o.setUserid(res.getString("customerid"));
-			o.setGoodid(res.getString("Goodid"));
+			o.setCarid(res.getString("carid"));
 			}
 		stat.close();
 		conn.close();

@@ -15,7 +15,7 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE hq_customers ( "+
+	      String sql = "CREATE TABLE hq_customers10 ( "+
 	    		  "Userid varchar(20) not null primary key,"+
 	    		  "Username varchar(30),"+
 	    		  "Password varchar(30),"+
@@ -36,7 +36,7 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE sellers("+
+	      String sql = "CREATE TABLE sellers10("+
 	    		  "Userid varchar(20) not null primary key,"+
 	    		  "Username varchar(30),"+
 	    		  "Password varchar(30),"+
@@ -57,7 +57,7 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE Administrators (" + 
+	      String sql = "CREATE TABLE Administrators10 (" + 
 	      		"Userid varchar(20) not null primary key," + 
 	      		"Username varchar(30)," + 
 	      		"Password varchar(30));";
@@ -77,9 +77,9 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE Goods (" + 
-	      		"Goodid varchar(20) not null primary key," + 
-	      		"Goodname varchar(30)," + 
+	      String sql = "CREATE TABLE cars10 (" + 
+	      		"carid varchar(20) not null primary key," + 
+	      		"model varchar(30)," + 
 	      		"Amount int," + 
 	      		"Price float,"+
 	      		"description varchar(100),"+
@@ -100,7 +100,7 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE Transactions(" + 
+	      String sql = "CREATE TABLE Transactions10(" + 
 	      		"Transactionid varchar(20) not null primary key," + 
 	      		"Transactiondetails varchar(50)," + 
 	      		"Date Date);";
@@ -120,8 +120,8 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE GOODS_SELLERS(" + 
-	      		"Goodid varchar(20) not null primary key," + 
+	      String sql = "CREATE TABLE car_SELLERS(" + 
+	      		"carid varchar(20) not null primary key," + 
 	      		"Sellerid varchar(20));";
 	      
 		stat.executeUpdate(sql);
@@ -139,7 +139,7 @@ public class CreateDatabase {
 		try {
 			stat = conn.createStatement();
 		
-	      String sql = "CREATE TABLE Orders(" + 
+	      String sql = "CREATE TABLE Orders10(" + 
 	      		"Orderid varchar(20) not null primary key," + 
 	      		"Customerid varchar(20)," + 
 	      		"Sellerid varchar(20)," + 

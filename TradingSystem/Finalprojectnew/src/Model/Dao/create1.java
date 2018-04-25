@@ -14,7 +14,7 @@ public class create1 {
 		Statement stat=null;
 			try {
 				stat = conn.createStatement();
-	      String sql = "INSERT INTO administrators (userid,username,password) values("+"'"+userid+"',"+
+	      String sql = "INSERT INTO administrators10 (userid,username,password) values("+"'"+userid+"',"+
 		"'"+username+"',"+"'"+password+"'"+")";
 	      
 		stat.executeUpdate(sql);
@@ -27,14 +27,14 @@ public class create1 {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//      CreateDatabase a=new CreateDatabase();
-//      a.createcustomerTable();
-//      a.createGoods_SellersTable();
-//      a.creategoodsTable();
-//      a.createorderTable();
-//      a.createsadministratorTable();
-//      a.createsellerTable();
-//      a.createtransactionTable();
+		CreateDatabase a=new CreateDatabase();
+     a.createcustomerTable();
+     a.createGoods_SellersTable();
+    a.creategoodsTable();
+    a.createorderTable();
+    a.createsadministratorTable();
+     a.createsellerTable();
+     a.createtransactionTable();
      create1 aa=new create1();
       aa.createSller("16873", "admin", "qwer123", "123");
 	}

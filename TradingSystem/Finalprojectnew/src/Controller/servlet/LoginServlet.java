@@ -14,7 +14,7 @@ import Controller.service.AdministratorService;
 import Controller.service.CustomerService;
 import Controller.service.LoginService;
 import Controller.service.SellerService;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.Order;
 import Model.entities.customer;
 import Model.entities.seller;
@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
         if(!u.equals("worry information")) {
         CustomerService Cservice=new CustomerService();
         
-        List<Goods> glist=Cservice.viewGoodslist();
+        List<Cars> glist=Cservice.viewCarslist();
         SellerService s=new SellerService();
         List<seller> sellerlist=new ArrayList<seller>();
         for(int i=0;i<glist.size();i++) {
@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
 	        request.getSession().setAttribute("orderlist",orderlist );
 	        request.getSession().setAttribute("userid",userid );
 	        request.getSession().setAttribute("role", role);
-	        List<Goods> glist=s.goodslist(userid);
+	        List<Cars> glist=s.Carslist(userid);
 			request.getSession().setAttribute("glist", glist);
 	        response.sendRedirect("/Finalprojectnew/Sellerindex.jsp");
 	        }else {
@@ -93,7 +93,7 @@ public class LoginServlet extends HttpServlet {
 		        request.getSession().setAttribute("orderlist",orderlist );
 		        request.getSession().setAttribute("userid",userid );
 		        request.getSession().setAttribute("role", role);
-				List<Goods>glist= ser.viewGoodslist();
+				List<Cars>glist= ser.viewCarslist();
 				request.getSession().setAttribute("glist", glist);
 				List<customer> clist=admin.ViewCustomers();
 				request.getSession().setAttribute("clist", clist);

@@ -7,10 +7,9 @@ import java.sql.SQLException;
 
 
 public class JDBC {
-	//private static final String URL="jdbc:mysql://www.papademas.net:3306/510labs?autoReconnect=true&useSSL=false";
-	private static final String URL="jdbc:mysql://www.papademas.net:3306/fp510?autoReconnect=true&useSSL=false";
-	private static final String USER="fpuser";
-	private static final String PASSWORD="510";
+	private static final String URL="jdbc:mysql://www.papademas.net:3306/ps";
+	private static final String USER="ps";
+	private static final String PASSWORD="ps1";
 	
 	private Connection conn=null;
 	

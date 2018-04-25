@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Controller.service.SellerService;
 import Controller.service.Userservice;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.Order;
 import Model.entities.seller;
 
@@ -39,19 +39,19 @@ public class orderServlet3 extends HttpServlet {
 		Userservice u=new Userservice();
 		SellerService s=new SellerService();
 		Order o=u.viewOrderDetails(orderid);
-		String gl=o.getGoodid();
+		String gl=o.getcarid();
 		String[] glist=gl.trim().split(" ");
-		List<Goods> goodslist=new ArrayList<Goods>();
+		List<Cars> Carslist=new ArrayList<Cars>();
 		List<seller> sellerlist=new ArrayList<seller>();
 		for(int i=0;i<glist.length;i++) {
 		
-			goodslist.add(u.goodDetail(glist[i]));
+			Carslist.add(u.carDetail(glist[i]));
 		}
-		for(int i=0;i<goodslist.size();i++) {
-			sellerlist.add(s.selectSeller(goodslist.get(i).getSellerid()));
+		for(int i=0;i<Carslist.size();i++) {
+			sellerlist.add(s.selectSeller(Carslist.get(i).getSellerid()));
 		}
 		request.getSession().setAttribute("sellerlist2", sellerlist);
-		request.getSession().setAttribute("goodsdetail", goodslist);
+		request.getSession().setAttribute("Carsdetail", Carslist);
 		request.getSession().setAttribute("orderdetail", o);
 		response.sendRedirect("/Finalprojectnew/OrderDetail.jsp");
 	}

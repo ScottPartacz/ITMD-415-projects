@@ -2,15 +2,15 @@ package Model.DaoImpl;
 
 import java.util.List;
 
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.Order;
 
 public interface UserOperation {
 
 	
-	public List<Goods> viewGoodslist();
+	public List<Cars> viewCarlist();
 	public void cancelOrder(String orderid);
 	public Order vieworderdetail(String orderid);
 	public List<Order> vieworderlist(String role, String userid);
-	public Goods Gooddetail(String goodid);
+	public Cars Cardetail(String goodid);
 }

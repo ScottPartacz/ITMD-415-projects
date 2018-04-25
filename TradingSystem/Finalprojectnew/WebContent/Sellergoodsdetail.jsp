@@ -137,14 +137,14 @@ color: #888;
   }
   function check2(form) {
 
-		 if(form.addgoodid.value==''){
-		          alert("please input goodid!");
-		          form.addgoodid.focus();
+		 if(form.addcarid.value==''){
+		          alert("please input carid!");
+		          form.addcarid.focus();
 		          return false;
 		   }
-		 if(form.addgoodname.value==''){
-		     alert("please input goodname!");
-		     form.addgoodname.focus();
+		 if(form.addcarname.value==''){
+		     alert("please input carname!");
+		     form.addcarname.focus();
 		     return false;
 		}
 		 if(form.addamount.value==''){
@@ -166,13 +166,13 @@ color: #888;
 		}
   </script>
   <% 
-  Goods g=(Goods)session.getAttribute("good");
+  Cars g=(Cars)session.getAttribute("car");
   seller s=(seller)session.getAttribute("seller"); 
   String r=(String)session.getAttribute("role"); 
   %>
   <div id="content">
   <div id="header">
-    <h1>Good detail</h1>
+    <h1>car detail</h1>
      <hr>
     </div>
     <div id="table">
@@ -185,10 +185,10 @@ color: #888;
           %>
           <td width="70%" valign="top">
                <tr>
-                 <td><B>goodid:<%=g.getGoodsid() %></B></td> 
+                 <td><B>carid:<%=g.getCarid() %></B></td> 
                </tr>
                <tr>
-                 <td>Goodname:<%=g.getGoodsname()%></td>
+                 <td>carname:<%=g.getModel()%></td>
                </tr>
                <tr>
                  <td>price:<%=g.getPrice() %></td>
@@ -211,7 +211,7 @@ color: #888;
     </div>
     </div>
     <div id="button-wrapper">
-				<a href="Controller/servlet/goodsServlet?deletegoodid=<%=g.getGoodsid()%>"><button id="delete">Delete</button></a>
+				<a href="Controller/servlet/carsServlet?deletecarid=<%=g.getCarid()%>"><button id="delete">Delete</button></a>
 				<button id="update">update</button>
 				<% if(r.equals("seller")){%>
 				<a href="Sellerindex.jsp"><button id="return">return</button></a>
@@ -222,10 +222,10 @@ color: #888;
    </div>
    
    <div id="input">
-	<span id="span1">Update Good</span>
+	<span id="span1">Update car</span>
 	<div id="create">
-	<form action="Controller/servlet/goodsServlet?updategoodid=<%=g.getGoodsid()%>" method="post" onsubmit="return check2(this)">
-		<label><span>Goodname:</span> <input id="addgoodname" name="addgoodname" type="text"/></label><br>
+	<form action="Controller/servlet/carsServlet?updatecarid=<%=g.getCarid()%>" method="post" onsubmit="return check2(this)">
+		<label><span>carname:</span> <input id="addcarname" name="addcarname" type="text"/></label><br>
 		<label><span>amount:</span> <input id="addamount" name="addamount" type="text"></label><br>
 		<label><span>price:</span> <input id="addprice" name="addprice" type="text" ></label><br>
 		<label><span>description:</span> <textarea id="description" name="description"></textarea></label><br>

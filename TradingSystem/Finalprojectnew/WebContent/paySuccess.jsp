@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <% 
          String id = (String)request.getSession().getAttribute(("payorderid"));
       %>
-           You have paid for good:<%=id%>
+           You have paid for car:<%=id%>
 </div>
     <div id="back"><a href="CustomerAccount.jsp">return to your account</a></div>
 </div>

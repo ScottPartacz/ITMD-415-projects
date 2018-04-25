@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import Controller.service.AdministratorService;
 import Controller.service.CustomerService;
 import Controller.service.Userservice;
-import Model.entities.Goods;
+import Model.entities.Cars;
 import Model.entities.Order;
 
 /**
@@ -37,25 +37,25 @@ public class orderServlet2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//String orderid, String Customerid, String sellerid, List<Goods> goodslist, String status,Date date
+		//String orderid, String Customerid, String sellerid, List<cars> carslist, String status,Date date
 		CustomerService custs=new CustomerService();
 		Userservice u=new Userservice();
 		AdministratorService ad=new AdministratorService();
 		String Customerid=(String) request.getSession().getAttribute("userid");
 		if(request.getSession().getAttribute("role").equals("customer")) {
 		if(request.getSession().getAttribute("cart")!=null) {
-		List<Goods> Goodslist=(List<Goods>) request.getSession().getAttribute("cart");
+		List<Cars> carslist=(List<Cars>) request.getSession().getAttribute("cart");
 		String sellerid="";
 		String status="non-payment";
 		Date d=new Date();
-		for(int i=0;i<Goodslist.size();i++) {
-			sellerid+=Goodslist.get(i).getSellerid()+" ";
+		for(int i=0;i<carslist.size();i++) {
+			sellerid+=carslist.get(i).getSellerid()+" ";
 		}
 
 		int m=(int) (Math.random()*100000);
 		String orderid3=String.valueOf(m);
 		
-		custs.createOrder(orderid3,  sellerid, Customerid,Goodslist, status, d);
+		custs.createOrder(orderid3,  sellerid, Customerid,carslist, status, d);
 		}
 		List<Float> pricelist=new ArrayList<Float>();
 		String orderid=null;
@@ -74,9 +74,9 @@ public class orderServlet2 extends HttpServlet {
 		List<Order>orderlist=custs.ViewOrders("customer", Customerid);
 		for(int i=0;i<orderlist.size();i++) {
 			float price=0;
-			String[]gs= orderlist.get(i).getGoodid().split(" ");
+			String[]gs= orderlist.get(i).getcarid().split(" ");
 			for(int q=0;q<gs.length;q++) {
-				price+=u.goodDetail(gs[q]).getPrice();
+				price+=u.carDetail(gs[q]).getPrice();
 			}
 			pricelist.add(price);
 		}
