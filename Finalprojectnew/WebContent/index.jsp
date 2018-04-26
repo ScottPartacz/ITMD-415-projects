@@ -6,74 +6,69 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <title>Insert title here</title>
  <style type="text/css">
+ background{
+ 	background-color:green;
+ }
  #vintage{
-font:25px Georgia;
-background: #EEE repeat;
-font-weight: bold;
-text-shadow: 5px -5px black, 4px -4px white;
 -webkit-text-fill-color: transparent;
 -webkit-background-clip: text;
 text-align:center;
+font: Georgia;
+font-size: 25px;
+font-weight: bold;
+font-style: oblique;
+background: black repeat;
+text-shadow: 6px -6px blue, 5px -5px blue;
 } 
  #a{
-    width:510px;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    margin: auto;
-    text-align:center;
+    width:500px;
 }
     #header{
       width:500px;
       height:30px;
-      background:#5B5B5B;
+      background:#42d9f4;
     }
-  	#sign{
-   	  float:left;
-   	  width:200px;
-   	  font: 20px Georgia, "Times New Roman", Times, serif;
-   	  margin-left:20px;
-   	  margin-top:3px;
-   	}
-   	#sign:hover{
-   	
-   	 background:white;
-   	}
-   	#register1{
-   	 width:200px;
-   	 float:left;
-   	 font: 20px Georgia, "Times New Roman", Times, serif;
-   	 margin-top:3px;
-   	}
-   	#register1:hover{
-   	
-   	 background:white;
-   	}
-   	#register{
-   	 display:none;
-   	 width:500px;
-   	 height:240px;
-   	 background: #EEE;
-   	}
-   	#signin{
-   	 width:500px;
-   	 height:200px;
-   	 background: #EEE;
-   	}
-   	.inputWrap { 
+    #sign{
+      float:left;
+      font: 20px Georgia, oblique;
+      margin-left:20px;
+      margin-top:3px;
+    }
+    #sign:hover{
+    
+     background:white;
+    }
+    #register1{
+     float:left;
+     font: 20px Georgia,"Raleway", Arial, sans-serifw ;
+     margin-top:3px;
+    }
+    #register1:hover{
+    
+     background:white;
+    }
+    #register{
+     display:none;
+     background: #f4ca41;
+    }
+    #signin{
+     width:500px;
+     height:200px;
+     background: #f4ca41;
+    }
+    .inputWrap { 
     background: -webkit-gradient(linear, left top, left 24, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF)); 
     background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 24px); 
     background: -o-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 24px); 
-    font: 20px Georgia, "Times New Roman", Times, serif;
+    font: 20px georgia,oblique;
     border-radius:3px; 
-    border:1px solid #CCC; 
+    border:2px #CCC solid; 
     margin:10px 10px 0; 
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#FFFFFF'); 
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#FFFFFF')"; 
 } 
    #table1{
-   margin-left:auto;
+   	margin-left:auto;
     margin-right:auto;
     text-align:left;
      

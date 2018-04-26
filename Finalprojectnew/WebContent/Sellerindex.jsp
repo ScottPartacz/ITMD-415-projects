@@ -6,151 +6,34 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <style type="text/css">
- #content{
-	 margin:auto;
-	 width:950px;
-	 text-align:center;
-	 float:center;
-	}
-	#header{	
-	  width:900px;
-	  font: 25px Georgia, "Times New Roman", Times, serif;
-	  margin: auto;
-	}
-	#input{
-	display:none;
-	float:left;
-	width:600px;
-	height:400px;
-   }
-#input #span1{
-	float:left;
-	font: 20px Georgia, "Times New Roman", Times, serif;
-	margin-left:30px;
-	margin-bottom:10px;
-	margin-top:10px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-#create {
-	float:left;
-	margin-left:auto;
-    margin-right:auto;
-    width: 600px;
-    background: #F7F7F7;
-    padding: 25px 15px 25px 10px;
-    font: 20px Georgia, "Times New Roman", Times, serif;
-    color: #888;
-    text-shadow: 1px 1px 1px #FFF;
-    border:1px solid #E4E4E4;
-}
-#create span{
-	color:red;
-}
-#create label{
-	margin-top:3px;
-	margin-bottom:3px;
-	display:block;
-}
-#create label> span{
-float: left;
-width: 20%;
-text-align: right;
-margin-top: 10px;
-color: #888;
-}
-#create textarea{
-	height:100px;
-	width:60%;
-	padding: 5px 3px 3px 5px;
-}
-#create input{
-	padding:5px 3px 3px 5px;
-	width:60%;
-}
-#create #save-btn{
-	padding: 5px 20px 5px 20px;
-	margin-left:100px;
-	margin-top:10px;
-	float:left;
-}
-#create #cancel-btn{
-	padding: 5px 20px 5px 20px;
-	margin-left:180px;
-	margin-top:10px;
-	float:left;
-}
-  ul, li{
-   margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F53",Arial, Helvetica, sans-serif
-} 
+li {
+    float: left;
 
-ol, ul ,li{list-style:none} 
-img {border: 0; vertical-align:middle} 
-body{color:#000000;background:#FFF; text-align:center} 
-.clear{clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px} 
-a{color:#000000;text-decoration:none}  
-a:hover{color:#BA2636} 
- 
-.red ,.red a{ color:#F00} 
-.lan ,.lan a{ color:#1E51A2} 
-.pd5{ padding-top:5px} 
-.dis{display:block} 
-.undis{display:none} 
- 
-ul#nav{ width:100%; height:60px; background:#00A2CA;margin:0 auto} 
-ul#nav li{display:inline; height:60px} 
-ul#nav li a{display:inline-block; padding:0 20px; height:60px; line-height:60px; 
-color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:16px} 
-ul#nav li a:hover{background:#0095BB}
-#orderlist{
-	text-align:left;
-	 float:left;
-	 width:950px;
-	}
-	#orderlist h1{
-	 text-align:left;
-	}
-table {  
-  text-align:center;
-  width: 100%;  
-  border-collapse: collapse;  
-} 
-tr:nth-of-type(odd) {  
-  background: #eee;  
-} 
-th {  
-  background: #333;  
-  color: white;  
-  font-weight: bold;  
-} 
-td, th {  
-  padding: 6px;  
-  border: 1px solid #ccc;  
-  text-align: left;  
 }
-#update{
-	
-	float:left;
-	width:500px;
-	display:none; 
- 	}
-#update table td, th { 
-  font: 20px Georgia, "Times New Roman", Times, serif; 
-  padding: 6px;  
-  border: 1px solid #ccc;
-  height:40px;
-  text-align: center;  
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
-#update input{ 
-font: 20px Georgia, "Times New Roman", Times, serif; 
-  width:250px;
-  height:30px;
-  text-align: center;  
+
+table {
+    width: 100%;
+    text-align: center;
 }
-#carslist{
- display:none;
-}
-#update{
- display:none;
+
+th {
+    height: 50px;
 }
 </style>
 </head>

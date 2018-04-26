@@ -9,27 +9,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
-  #content{
-        width: 650px;
-        height: 300px;
-        background: #EEE;
+ #content{
+        background: #42d9f4;
         position:absolute;
         left:0;
         top: 0;
         bottom: 0;
         right: 0;
         margin: auto;
-        font: 40px Georgia, "Times New Roman", Times, serif;
+        font: 50px Georgia, oblique;
+        font-style:oblique;
          }
     #text{
         text-align:center;
         margin-top:90px;
+       
     
     }
     #back{
         text-align:center;
         margin-top:50px;
-         font: 20px Georgia, "Times New Roman", Times, serif;
+         font: 20px Georgia;
+         font-style:oblique;
      }
 </style>
 </head>

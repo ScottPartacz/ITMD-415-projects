@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-    <style type="text/css">
+     <style type="text/css">
      #content{
 	 margin:auto;
 	 width:800px;
@@ -27,31 +27,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	#header{	
 	  text-algin:center;
 	  width:790px;
-	  font: 25px Georgia, "Times New Roman", Times, serif;
+	  font: 30px Georgia, oblique;
 	  margin: auto;
+	  background-color:#f4ca41;
 	}
 	#shopping{
 	
 	}
-	#table{
-	   text-algin:center;
-	   font: 20px Georgia, "Times New Roman", Times, serif;
-	   width:790px;
-	   margin: auto;
-	   border-collapse:separate;
-       border-spacing:10px 20px;
-	}
-	th{
-	      font: 25px Georgia, "Times New Roman", Times, serif;
-	}
-	td {
-       text-align:center;
-       vertical-align:middle;
-       }
+	table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
    .total{
        margin-top:10px;
        margin-left:80px;
-       font: 25px Georgia, "Times New Roman", Times, serif;
+       font: 20px Georgia, oblique;
        float:left;
        }
    #buttons{
@@ -60,8 +53,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        margin-top:15px;
       }
    .button{
-      float:right;
+      float:center;
       margin-right:70px;
+      border:3px;
+      background-color:#d941f4;
+      text-align:center;
       
    }
     </style>

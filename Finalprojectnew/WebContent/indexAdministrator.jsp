@@ -10,82 +10,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <title>Insert title here</title>
 <style type="text/css">
-ol, ul ,li{list-style:none} 
-img {border: 0; vertical-align:middle} 
-body{color:#000000;background:#FFF; text-align:center} 
-.clear{clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px} 
-a{color:#000000;text-decoration:none}  
-a:hover{color:#BA2636} 
- 
-.red ,.red a{ color:#F00} 
-.lan ,.lan a{ color:#1E51A2} 
-.pd5{ padding-top:5px} 
-.dis{display:block} 
-.undis{display:none} 
- 
-ul#nav{ height:60px; background:#00A2CA;margin:0 auto} 
-ul#nav li{display:inline; height:60px} 
-ul#nav li a{display:inline-block; padding:0 20px; height:60px; line-height:60px; 
-color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:16px} 
-ul#nav li a:hover{background:#0095BB}
- #content{
-	 margin:auto;
-	 width:950px;
-	 text-align:center;
-	 float:center;
-	}
-	#header{	
-	  width:900px;
-	  font: 25px Georgia, "Times New Roman", Times, serif;
-	  margin: auto;
-	}
-	table {  
-  text-align:center;
-  width: 100%;  
-  border-collapse: collapse;  
-} 
-tr:nth-of-type(odd) {  
-  background: #eee;  
-} 
-th {  
-  background: #333;  
-  color: white;  
-  font-weight: bold;  
-} 
-td, th {  
-  padding: 6px;  
-  border: 1px solid #ccc;  
-  text-align: left;  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
-#orderlist{
-	text-align:left;
-	 float:left;
-	 width:100%;
-	}
-#orderlist h1{
- float:left;
- margin-left:5px;
+
+li {
+    float: left;
+
 }
-#carslist{
- display:none; 
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
-#carslist h1{
- float:left;
- margin-left:5px;
+
+table {
+    width: 100%;
+    text-align: center;
 }
-#customerslist{
- display:none; 
-}
-#customerslist h1{
- float:left;
- margin-left:5px;
-}
-#sellerslist{
- display:none; 
-}
-#sellerslist h1{
- float:left;
- margin-left:5px;
+
+th {
+    height: 50px;
 }
 </style>
 </head>
