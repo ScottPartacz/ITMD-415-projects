@@ -26,7 +26,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab1 has been created");
 		}
 	}
 	public void createsellerTable(){
@@ -47,7 +46,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab2 has been created");
 		}
 	}
 	public void createsadministratorTable(){
@@ -67,7 +65,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab3 has been created");
 		}
 	}
 	public void creategoodsTable(){
@@ -90,7 +87,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab4 has been created");
 		}
 	}
 	public void createtransactionTable(){
@@ -110,7 +106,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab5 has been created");
 		}
 	}
 	public void createGoods_SellersTable(){
@@ -129,7 +124,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab6 has been created");
 		}
 	}
 	public void createorderTable(){
@@ -152,7 +146,6 @@ public class CreateDatabase {
 		conn.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("h_liu_tab7 has been created");
 		}
 	}
 }

@@ -18,12 +18,12 @@
     <url-pattern>/Controller/servlet/LoginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>GoodsServlet</servlet-name>
-    <servlet-class>Controller.servlet.goodsServlet</servlet-class>
+    <servlet-name>CarsServlet</servlet-name>
+    <servlet-class>Controller.servlet.CarsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>GoodsServlet</servlet-name>
-    <url-pattern>/Controller/servlet/goodsServlet</url-pattern>
+    <servlet-name>CarsServlet</servlet-name>
+    <url-pattern>/Controller/servlet/CarsServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>orderServlet</servlet-name>

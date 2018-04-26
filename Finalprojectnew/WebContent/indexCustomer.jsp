@@ -116,7 +116,7 @@ ul#nav li a:hover{background:#0095BB}
           <div>
              <dl>
                <dt>
-                 <a href="Controller/servlet/carsServlet?id=<%=g.getCarid()%>"><%=g.getModel() %></a>
+                 <a href="Controller/servlet/CarsServlet?id=<%=g.getCarid()%>"><%=g.getModel() %></a>
                </dt>
                <dd class="dq">sellername:<%=se.getUsername() %>&nbsp;&nbsp;price$: <%=g.getPrice() %></dd> 
              </dl>
