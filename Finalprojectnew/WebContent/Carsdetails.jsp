@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
     <style type="text/css">
-	   #content{
+     #content{
 	 margin:auto;
 	 width:800px;
 	 text-align:center;
@@ -29,41 +29,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	#header{	
 	  text-algin:center;
 	  width:790px;
-	  font: 25px Georgia, "Times New Roman", Times, serif;
+	  font: 30px Georgia, oblique;
 	  margin: auto;
+	  background-color:#f4ca41;
 	}
-	#title{
-	  width:300px;
-	  height:300px;	  
-	  float:right;
-	  margin-right:50px;
-	  margin-top:10px;
-	}
-	span{
-	  font: 25px Georgia, "Times New Roman", Times, serif;
-	}
-	#description{
-	  width:300px;
-	  height:260px;
-	  background:#EEE;
-	  font: 25px Georgia, "Times New Roman", Times, serif;
-	}
-	#table{
-	 float:left;
-	 margin-left:50px;
-	  font: 25px Georgia, "Times New Roman", Times, serif;
-	}
-	table{
+	#shopping{
 	
-	border-collapse:separate;
-    border-spacing:10px 20px;
 	}
-	#button-wrapper{
-	 float:left;
-	  margin-left:50px;
-	  margin-top:20px;
-	}
-	</style>
+	table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+   .total{
+       margin-top:10px;
+       margin-left:80px;
+       font: 20px Georgia, oblique;
+       float:left;
+       }
+   #buttons{
+       width:790px;
+       float:left;
+       margin-top:15px;
+      }
+   .button{
+      float:center;
+      margin-right:70px;
+      border:3px;
+      background-color:#d941f4;
+      text-align:center;
+      
+   }
+    </style>
   </head>
   
   <body>
