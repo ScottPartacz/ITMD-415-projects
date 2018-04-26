@@ -1,0 +1,45 @@
+
+    <style type="text/css">
+     #content{
+	 margin:auto;
+	 width:800px;
+	 text-align:center;
+	 float:center;
+	}
+	#header{	
+	  text-algin:center;
+	  width:790px;
+	  font: 30px Georgia, oblique;
+	  margin: auto;
+	  background-color:#f4ca41;
+	}
+	#shopping{
+	
+	}
+	table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+   .total{
+       margin-top:10px;
+       margin-left:80px;
+       font: 20px Georgia, oblique;
+       float:left;
+       }
+   #buttons{
+       width:790px;
+       float:left;
+       margin-top:15px;
+      }
+   .button{
+      float:center;
+      margin-right:70px;
+      border:3px;
+      background-color:#d941f4;
+      text-align:center;
+      
+   }
+    </style>

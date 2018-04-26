@@ -1,0 +1,75 @@
+<style type="text/css">
+ background{
+ 	background-color:green;
+ }
+ #vintage{
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+text-align:center;
+font: Georgia;
+font-size: 25px;
+font-weight: bold;
+font-style: oblique;
+background: black repeat;
+text-shadow: 6px -6px blue, 5px -5px blue;
+} 
+ #a{
+    width:500px;
+}
+    #header{
+      width:500px;
+      height:30px;
+      background:#42d9f4;
+    }
+    #sign{
+      float:left;
+      font: 20px Georgia, oblique;
+      margin-left:20px;
+      margin-top:3px;
+    }
+    #sign:hover{
+    
+     background:white;
+    }
+    #register1{
+     float:left;
+     font: 20px Georgia,"Raleway", Arial, sans-serifw ;
+     margin-top:3px;
+    }
+    #register1:hover{
+    
+     background:white;
+    }
+    #register{
+     display:none;
+     background: #f4ca41;
+    }
+    #signin{
+     width:500px;
+     height:200px;
+     background: #f4ca41;
+    }
+    .inputWrap { 
+    background: -webkit-gradient(linear, left top, left 24, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 24px); 
+    background: -o-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 24px); 
+    font: 20px georgia,oblique;
+    border-radius:3px; 
+    border:2px #CCC solid; 
+    margin:10px 10px 0; 
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#FFFFFF'); 
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#FFFFFF')"; 
+} 
+   #table1{
+   	margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+     
+   }
+   #table2{
+   margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+     
+   }
+ </style>
